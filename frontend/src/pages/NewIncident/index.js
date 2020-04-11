@@ -30,7 +30,7 @@ export default function NewIncident() {
         },
       });
 
-      swal("OK", `Caso ${title} cadastrado com suceso`, "success");
+      swal("OK", `Caso ${title} cadastrado com sucesso`, "success");
       history.push("/profile");
     } catch (error) {
       swal("Erro ao cadastrar novo caso", "Tente novamente!", "error");
