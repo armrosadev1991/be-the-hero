@@ -4,6 +4,7 @@ import "./styles.css";
 import { FiArrowLeft } from "react-icons/fi";
 import { Link, useHistory } from "react-router-dom";
 import api from "../../services/api";
+import swal from "sweetalert";
 
 export default function NewIncident() {
   const [title, setTitle] = useState("");
@@ -29,9 +30,10 @@ export default function NewIncident() {
         },
       });
 
+      swal("OK", `Caso ${title} cadastrado com suceso`, "success");
       history.push("/profile");
     } catch (error) {
-      alert("Erro ao cadastrar novo caso, tente novamente");
+      swal("Erro ao cadastrar novo caso", "Tente novamente!", "error");
     }
   }
 

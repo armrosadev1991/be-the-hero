@@ -3,6 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import "./styles.css";
 import { FiLogIn } from "react-icons/fi";
 import api from "../../services/api";
+import swal from "sweetalert";
 
 import heroesImg from "../../assets/heroes.png";
 import logoImg from "../../assets/logo.svg";
@@ -22,7 +23,7 @@ export default function Logon() {
 
       history.push("/profile");
     } catch (e) {
-      alert("Falha no Login, tente de novo");
+      swal("Erro no Login", "Tente de novo!", "error");
     }
   }
 
